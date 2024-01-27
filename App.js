@@ -1,25 +1,28 @@
 import * as React from 'react';
-import { StyleSheet, Text, ImageBackground, View } from 'react-native';
+import { StyleSheet, Text, ImageBackground, View, StatusBar, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <LinearGradient
         colors={['#043E38', '#B4DCB8']}
         style={styles.background}
       >
+        <StatusBar translucent backgroundColor="transparent" />
         <ImageBackground
-          source={require('./src/assets/backtop.svg')}
+          source={require('./src/assets/images/background.png')}
           style={styles.backgroundImage}
-          resizeMode="cover"
+          resizeMode="contain"
         >
-          <View style={styles.overlayContent}>
-            <Text style={styles.text}>Texto sobre a imagem</Text>
-            {/* Adicione mais componentes aqui conforme necessário */}
-          </View>
+
+
+
+
+
+
+
 
         </ImageBackground>
 
@@ -33,7 +36,7 @@ export default function App() {
 
 
       </LinearGradient>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -42,22 +45,28 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   background: {
-    flex: 1,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 35,
+    paddingBottom: 10,
+  },
+  backgroundImage: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: "100%",
+    margin: 10,
   },
   logo: {
 
   },
-  backgroundImage: {
-   
 
-  },
   overlayContent: {
 
   },
   text: {
-    
+
   },
+
 });
